@@ -5,7 +5,6 @@ const config: CapacitorConfig = {
   appId: "com.topclean.app",
   appName: "TOP CLEAN",
   webDir: "out",           // Next.js static export dir
-  bundledWebRuntime: false,
   server: {
     // للتطوير: استخدم URL المحلي
     // url: "http://192.168.1.100:3000",
