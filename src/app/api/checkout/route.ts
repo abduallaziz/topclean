@@ -42,7 +42,8 @@ export async function POST(req: NextRequest) {
     }
 
     // 2. Get next order ID
-    const { data: orderId } = await supabase.rpc("next_order_id", { p_shop_id: shopId });
+    const { data: orderId } = await supabase.rpc("next_order_id", { p_shop_id: shopId } as any);
+
 
     // 3. Calculate totals
     const subtotal    = cart.reduce((s: number, i: any) => s + i.price * i.qty, 0);
