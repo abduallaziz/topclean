@@ -1,21 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   typescript: {
-    // سيقوم هذا الخيار بتجاهل أخطاء TypeScript أثناء الـ Build
+    // يتجاهل أخطاء التايب سكريبت أثناء الرفع ليعمل الموقع فوراً
     ignoreBuildErrors: true,
   },
   eslint: {
-    // سيقوم هذا الخيار بتجاهل أخطاء ESLint أيضاً لضمان سرعة الرفع
+    // يتجاهل تنبيهات التنسيق لضمان نجاح الـ Build
     ignoreDuringBuilds: true,
   },
 };
 
 export default nextConfig;
-
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: false,
-};
-
-module.exports = nextConfig;
-
