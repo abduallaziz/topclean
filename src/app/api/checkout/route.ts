@@ -42,7 +42,10 @@ export async function POST(req: NextRequest) {
     }
 
     // 2. Get next order ID
-    const { data: orderId } = await supabase.rpc("next_order_id", { p_shop_id: shopId } as any);
+    //const { data: orderId } = await supabase.rpc("next_order_id", { p_shop_id: shopId } as any);//
+    // @ts-ignore
+    const { data: orderId } = await (supabase as any).rpc("next_order_id", { p_shop_id: shopId });
+
 
 
     // 3. Calculate totals
