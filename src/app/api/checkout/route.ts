@@ -26,8 +26,8 @@ export async function POST(req: NextRequest) {
     if (!cart?.length)  return NextResponse.json({ error: "السلة فارغة" }, { status: 400 });
     if (!carPlate)      return NextResponse.json({ error: "رقم اللوحة مطلوب" }, { status: 400 });
 
-    const shopId = shopUser.shop_id;
-    const taxRate = shopUser.shops?.tax_rate ?? 15;
+    const shopId = (shopUser as any).shop_id;
+    const taxRate = (shopUser as any).shops?.tax_rate ?? 15;
 
     // 1. Create or update customer
     let customerId: string | null = null;
